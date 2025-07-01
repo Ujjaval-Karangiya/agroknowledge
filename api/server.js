@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     cachedClient = client;
   }
 
-  const db = cachedClient.db("your_db_name");
-  const collection = db.collection("your_collection");
+  const db = cachedClient.db("agrok");
+  const collection = db.collection("users");
 
   const data = await collection.find({}).toArray();
   res.status(200).json(data);

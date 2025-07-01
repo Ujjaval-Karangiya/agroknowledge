@@ -1,21 +1,35 @@
-<script>
-document.getElementById("login-form").addEventListener("submit", async e => {
-  e.preventDefault();
-  const email = e.target.email.value;
-  const password = e.target.password.value;
-
-  const res = await fetch('/api/auth/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
-  });
-
-  const data = await res.json();
-  if (res.ok) {
-    localStorage.setItem("token", data.token);
-    window.location.href = 'dashboard.html';
-  } else {
-    alert("Login failed.");
-  }
-});
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - AgroStar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 flex justify-center items-center h-screen">
+  <form id="login-form" class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-bold mb-6 text-green-700">Login</h2>
+    <input type="email" name="email" placeholder="Email" class="w-full mb-4 px-4 py-2 border rounded" required>
+    <input type="password" name="password" placeholder="Password" class="w-full mb-6 px-4 py-2 border rounded" required>
+    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Login</button>
+  </form>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async e => {
+      e.preventDefault();
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        localStorage.setItem("token", data.token);
+        window.location.href = 'agro.html';
+      } else {
+        alert(data.message || "Login failed");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,28 +1,15 @@
 {
-  "name": "agroknowledge",
+  "name": "agrostar-simple-login",
   "version": "1.0.0",
-  "description": "",
-   "main": "server/server.js",
-   "scripts": {
+  "main": "server/server.js",
+  "scripts": {
     "start": "node server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ujjaval-Karangiya/agroknowledge.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ujjaval-Karangiya/agroknowledge/issues"
-  },
-  "homepage": "https://github.com/Ujjaval-Karangiya/agroknowledge#readme",
   "dependencies": {
-    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.0.0",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.1"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.0.4"
   }
 }

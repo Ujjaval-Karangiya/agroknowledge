@@ -15,8 +15,8 @@
   <script>
     document.getElementById("login-form").addEventListener("submit", async e => {
       e.preventDefault();
-      const email = e.target.email.value;
-      const password = e.target.password.value;
+      const email ="iamagro@123.en" ;
+      const password = "1234";
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

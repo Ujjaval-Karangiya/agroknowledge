@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const authRoutes = require('./routes/auth');
-const adminRoutes = require('./routes/admin');
-app.use('/api/users', adminRoutes);
+
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -23,5 +23,5 @@ main()
   console.error('❌ MongoDB connection error:', err);
 });
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/agro');
+    await mongoose.connect('mongodb://127.0.0.1:27017/agrok');
 }
